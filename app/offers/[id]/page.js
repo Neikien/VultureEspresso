@@ -27,11 +27,11 @@ const offersData = [
   },
   {
     id: 3,
-    title: "Club InterContinental Experience",
+    title: "Club VultureEspresso Experience",
     category: "Exclusive",
     image:
       "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop",
-    desc: "Elevate your stay with access to the Club InterContinental Lounge.",
+    desc: "Elevate your stay with access to the Club VultureEspresso Lounge.",
     details: ["Lounge Access", "Evening Cocktails", "Private Check-in"],
   },
   {

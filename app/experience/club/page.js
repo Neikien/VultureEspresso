@@ -19,7 +19,7 @@ export default function ClubPage() {
             Exclusive Access
           </p>
           <h1 className="font-serif text-5xl md:text-7xl mb-6">
-            Club InterContinental
+            Club VultureEspresso
           </h1>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default function ClubPage() {
                 Exclusive Spaces
               </h3>
               <p className="text-secondary font-light">
-                Access to the private Club InterContinental Lounge, a sanctuary
+                Access to the private Club VultureEspresso Lounge, a sanctuary
                 for relaxation or business.
               </p>
             </div>

@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-[90%] mx-auto flex flex-col lg:flex-row justify-between gap-10">
         <div>
           <h3 className="font-serif text-2xl text-white mb-4">
-            InterContinental
+            VultureEspresso
           </h3>
           <p className="text-sm font-light">Luxury Resorts & Hotels.</p>
         </div>

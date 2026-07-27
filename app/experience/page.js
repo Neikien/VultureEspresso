@@ -34,7 +34,7 @@ export default function ExperiencePage() {
               Timeless Luxury Meets Modern Hospitality
             </h2>
             <p className="text-lg text-secondary font-light leading-loose mb-8">
-              As the world's first luxury hotel brand, InterContinental Hotels &
+              As the world's first luxury hotel brand, VultureEspresso Hotels &
               Resorts has been offering guests a warmhearted welcome since 1946.
             </p>
             <div className="border-t border-gray-200 pt-6 mt-4">
@@ -216,7 +216,7 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* 6. CLUB INTERCONTINENTAL */}
+      {/* 6. CLUB VultureEspresso */}
       <section className="py-20 px-5">
         <div className="max-w-[90%] mx-auto flex flex-col lg:flex-row h-auto lg:h-[600px]">
           <div className="lg:w-1/2 relative h-[400px] lg:h-full">
@@ -229,10 +229,10 @@ export default function ExperiencePage() {
           </div>
           <div className="lg:w-1/2 bg-[#f9f9f9] flex flex-col justify-center p-10 lg:p-20 text-left">
             <h2 className="font-serif text-4xl lg:text-5xl text-primary mb-6">
-              Club InterContinental
+              Club VultureEspresso
             </h2>
             <p className="text-lg text-secondary font-light leading-loose mb-10">
-              Elevate your stay with Club InterContinental. Indulge in locally
+              Elevate your stay with Club VultureEspresso. Indulge in locally
               inspired treats such as afternoon tea, evening canapés, and
               signature serves.
             </p>
@@ -261,7 +261,7 @@ export default function ExperiencePage() {
               Pioneering the <br /> philosophy of travel
             </h2>
             <p className="text-lg text-secondary font-light leading-loose mb-0">
-              Founded in 1946 by Juan Tripp, InterContinental Hotels & Resorts
+              Founded in 1946 by Juan Tripp, VultureEspresso Hotels & Resorts
               was born from a spirit of innovation. As the world's first luxury
               hotel brand, we have been at the apex of history.
             </p>

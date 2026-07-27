@@ -84,7 +84,7 @@ export default function Header() {
             href="/"
             className="font-serif text-xl font-semibold uppercase tracking-widest text-primary"
           >
-            InterContinental
+            VultureEspresso
           </Link>
 
           {/* Navigation */}

@@ -19,7 +19,7 @@ export default function AmbassadorPage() {
             Membership
           </p>
           <h1 className="font-serif text-5xl md:text-7xl mb-6">
-            InterContinental Ambassador
+            VultureEspresso Ambassador
           </h1>
         </div>
       </div>
@@ -29,8 +29,8 @@ export default function AmbassadorPage() {
           Elevate Every Stay
         </h2>
         <p className="text-lg text-secondary font-light leading-relaxed mb-12">
-          InterContinental Ambassador is a loyalty program that delivers
-          recognition and exclusive benefits at InterContinental Hotels &
+          VultureEspresso Ambassador is a loyalty program that delivers
+          recognition and exclusive benefits at VultureEspresso Hotels &
           Resorts worldwide.
         </p>
 

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 // 1. DANH SÁCH ẢNH MOCK DATA (Dùng để hiển thị cho đẹp vì DB chưa có ảnh xịn)
 const MOCK_IMAGES = [
-  "https://digital.ihg.com/is/image/ihg/intercontinental-hanoi-4068417844-16x9?", // Ảnh 1 -HN
+  "https://digital.ihg.com/is/image/ihg/VultureEspresso-hanoi-4068417844-16x9?", // Ảnh 1 -HN
   "https://phuquoc.regenthotels.com/sites/rpq/files/styles/width_1920/public/homepage/Drone%20beach%20%282%29.jpg?itok=sIrMX5EB", // Ảnh 2 - ĐN
   "https://phuquoc.regenthotels.com/sites/rpq/files/styles/height_1400/public/homepage/OneBedroomSkyPoolVilla.jpg?itok=02RUSs_N", // Ảnh 3 - NT
   "https://phuquoc.regenthotels.com/sites/rpq/files/styles/height_1400/public/homepage/R6WI8638%20copy.jpg?itok=1AeuwdT6", // Ảnh 4 Da Lat

@@ -64,7 +64,7 @@ export default function LoyaltyPage() {
             IHG One Rewards
           </p>
           <h1 className="font-serif text-6xl md:text-8xl mb-8 animate-fade-in-up delay-100">
-            InterContinental Ambassador
+            VultureEspresso Ambassador
           </h1>
 
           {/* ĐÃ SỬA: Thay button bằng Link trỏ về /register */}
