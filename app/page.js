@@ -191,12 +191,7 @@ export default function Home() {
               wellness moments. We invite you behind the scenes of incredible
               experiences with moments of cultural discovery.
             </p>
-            <a
-              href="/spa"
-              className="inline-block border border-primary px-10 py-4 text-sm font-bold tracking-[2px] uppercase hover:bg-primary hover:text-white transition-all w-fit"
-            >
-              Discover More
-            </a>
+            
           </div>
 
           <div className="lg:w-1/2 relative h-[400px] lg:h-full order-1 lg:order-2">
@@ -236,12 +231,6 @@ export default function Home() {
               Rainmist Experience. Refresh the mind under the calming beat of
               cascading rain showers, and restore the soul.
             </p>
-            <a
-              href="/experience/rainmist"
-              className="inline-block border border-primary px-10 py-4 text-sm font-bold tracking-[2px] uppercase hover:bg-primary hover:text-white transition-all w-fit"
-            >
-              Find Out More
-            </a>
           </div>
         </div>
       </section>
@@ -264,12 +253,6 @@ export default function Home() {
               with our About us program and take advantage of exclusive benefits
               available at over 220 menu items worldwide.
             </p>
-            <a
-              href="/ambassador"
-              className="inline-block border border-primary px-8 py-4 text-[10px] font-bold tracking-[2px] uppercase hover:bg-primary hover:text-white transition-all"
-            >
-              More Rewards
-            </a>
           </div>
         </div>
       </section>
