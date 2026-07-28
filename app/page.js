@@ -261,7 +261,7 @@ export default function Home() {
             </h2>
             <p className="text-base text-secondary font-light leading-loose mb-8">
               Turn every trip into something extraordinary. Elevate your stay
-              with our loyalty program and take advantage of exclusive benefits
+              with our About us program and take advantage of exclusive benefits
               available at over 220 menu items worldwide.
             </p>
             <a

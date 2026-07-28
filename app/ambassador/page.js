@@ -29,7 +29,7 @@ export default function AmbassadorPage() {
           Elevate Every Stay
         </h2>
         <p className="text-lg text-secondary font-light leading-relaxed mb-12">
-          Vulture St. Espresso Ambassador is a loyalty program that delivers
+          Vulture St. Espresso Ambassador is a About us program that delivers
           recognition and exclusive benefits at Vulture St. Espresso Hotels &
           Resorts worldwide.
         </p>

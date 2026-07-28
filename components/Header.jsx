@@ -26,8 +26,7 @@ export default function Header() {
   const menuItems = [
     { name: "Menu", path: "/menu" },
     { name: "Experience", path: "/experience" },
-    { name: "Offers", path: "/offers" },
-    { name: "Loyalty", path: "/loyalty" },
+    { name: "About us", path: "/about-us" },
   ];
 
   // Xử lý nút Book Now

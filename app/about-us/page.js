@@ -8,7 +8,7 @@ import Link from "next/link"; // Đảm bảo đã import Link
 const tabContent = {
   recognition: {
     title: "Elevated Recognition",
-    desc: "We believe your loyalty should be rewarded instantly. Enjoy priority check-in, a dedicated support line, and exclusive access to our member-only private sales.",
+    desc: "We believe your About us should be rewarded instantly. Enjoy priority check-in, a dedicated support line, and exclusive access to our member-only private sales.",
     image:
       "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop",
     benefits: ["Priority Check-in", "Dedicated Support", "Welcome Amenity"],
@@ -44,7 +44,7 @@ const tabContent = {
   },
 };
 
-export default function LoyaltyPage() {
+export default function AboutusPage() {
   const [activeTab, setActiveTab] = useState("recognition");
 
   return (
@@ -53,7 +53,7 @@ export default function LoyaltyPage() {
       <div className="relative h-[60vh] w-full overflow-hidden bg-gray-900">
         <Image
           src="https://digital.ihg.com/is/image/ihg/ic-brand-refresh-homepg-offer-hero-box-lvp-1440x636"
-          alt="Loyalty Hero"
+          alt="About us"
           fill
           priority
           className="object-cover opacity-80"
