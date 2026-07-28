@@ -37,7 +37,7 @@ export default function TimeshifterPage() {
         <div className="bg-gray-50 p-10 rounded-lg border border-gray-100">
           <h3 className="font-serif text-2xl mb-4">Complimentary for Guests</h3>
           <p className="text-sm text-gray-500 mb-6">
-            VultureEspresso guests receive a complimentary jet lag plan with
+            Vulture St. Espresso guests receive a complimentary jet lag plan with
             every stay.
           </p>
           <button className="bg-black text-white px-8 py-3 uppercase tracking-widest text-xs font-bold">

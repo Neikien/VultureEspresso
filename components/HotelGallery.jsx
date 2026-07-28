@@ -4,11 +4,11 @@ import React from 'react';
 import { apiService } from '../services/apiService';
 // Dữ liệu ảnh mô phỏng từ các ảnh bạn đã gửi
 const MOCK_GALLERY_IMAGES = [
-  { src: 'https://digital.ihg.com/is/image/ihg/VultureEspresso-hanoi-5379482061-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Khách sạn VultureEspresso Hà Nội Landmark 72' }, // Tải ảnh này vào public/images/
-  { src: 'https://digital.ihg.com/is/image/ihg/VultureEspresso-hanoi-8831054182-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Nội thất phòng khách sạn' },
-  { src: 'https://digital.ihg.com/is/image/ihg/VultureEspresso-hanoi-6518976275-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Khách nhìn ra cảnh quan' },
-  { src: 'https://digital.ihg.com/is/image/ihg/VultureEspresso-hanoi-6864221890-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Bàn ăn và đầu bếp' },
-  { src: 'https://digital.ihg.com/is/image/ihg/VultureEspresso-hanoi-6503559295-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Phòng hội nghị' },
+  { src: 'https://digital.ihg.com/is/image/ihg/Vulture St. Espresso-hanoi-5379482061-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Khách sạn Vulture St. Espresso Hà Nội Landmark 72' }, // Tải ảnh này vào public/images/
+  { src: 'https://digital.ihg.com/is/image/ihg/Vulture St. Espresso-hanoi-8831054182-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Nội thất phòng khách sạn' },
+  { src: 'https://digital.ihg.com/is/image/ihg/Vulture St. Espresso-hanoi-6518976275-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Khách nhìn ra cảnh quan' },
+  { src: 'https://digital.ihg.com/is/image/ihg/Vulture St. Espresso-hanoi-6864221890-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Bàn ăn và đầu bếp' },
+  { src: 'https://digital.ihg.com/is/image/ihg/Vulture St. Espresso-hanoi-6503559295-4x3?wid=940&fit=constrain&resmode=bisharp', alt: 'Phòng hội nghị' },
 ];
 
 // NOTE: Vì bạn đang dùng Next.js, bạn nên dùng Component <Image> nếu có.

@@ -57,7 +57,7 @@ export default function BookingDetailModal({ isOpen, onClose, booking }) {
                 Phòng Nghỉ Dưỡng
               </h3>
               <p className="text-sm text-gray-500">
-                Kỳ nghỉ thượng hạng tại VultureEspresso
+                Kỳ nghỉ thượng hạng tại Vulture St. Espresso
               </p>
             </div>
             <div className="text-right">

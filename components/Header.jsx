@@ -24,7 +24,7 @@ export default function Header() {
   const [showBookBtn, setShowBookBtn] = useState(true);
 
   const menuItems = [
-    { name: "Destinations", path: "/destinations" },
+    { name: "Menu", path: "/menu" },
     { name: "Experience", path: "/experience" },
     { name: "Offers", path: "/offers" },
     { name: "Loyalty", path: "/loyalty" },
@@ -84,7 +84,7 @@ export default function Header() {
             href="/"
             className="font-serif text-xl font-semibold uppercase tracking-widest text-primary"
           >
-            VultureEspresso
+            Vulture St. Espresso
           </Link>
 
           {/* Navigation */}

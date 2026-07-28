@@ -132,10 +132,10 @@ function RoomsContent() {
           {hotelInfo ? (
             <>
               <Link
-                href="/destinations"
+                href="/menu"
                 className="hover:text-primary transition-colors"
               >
-                Destinations
+                Menu
               </Link>
               <span className="mx-2">&gt;</span>
               <span className="text-primary">{hotelInfo.TenKS}</span>
@@ -234,10 +234,10 @@ function RoomsContent() {
                   Vui lòng quay lại sau hoặc chọn khách sạn khác.
                 </p>
                 <Link
-                  href="/destinations"
+                  href="/menu"
                   className="text-accent font-bold uppercase tracking-widest text-xs border-b border-accent pb-1 hover:text-primary hover:border-primary"
                 >
-                  Quay lại danh sách khách sạn
+                  Quay lại danh sách món ăn
                 </Link>
               </div>
             )}

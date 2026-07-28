@@ -13,7 +13,7 @@ const Header = () => {
                 <ul className="utilityNav-list u-list clearfix">
                   <li className="utilityNav-list-item u-list-item">
                     {/* Số điện thoại, lấy từ mã nguồn của bạn: "tel:18778343613" và text "Quý vị cần giúp đỡ?" */}
-                    <a className="utilityNav-link u-link nav-middle resDirectIcon-link" href="tel:18778343613" aria-label="Call VultureEspresso">
+                    <a className="utilityNav-link u-link nav-middle resDirectIcon-link" href="tel:18778343613" aria-label="Call Vulture St. Espresso">
                       <i className="fa fa-phone" style={{ fontSize: '1.3em', verticalAlign: 'middle', paddingRight: '.3em' }}></i>
                     </a>
                     <span className="utilityNav-link u-link nav-middle resDirectNum-link">18778343613</span>
@@ -52,11 +52,11 @@ const Header = () => {
       </div>
       
       {/* 2. Menu Di động (Dạng Hamburger) */}
-      <div className="mobileNavManuWrapper hidden-sm hidden-md hidden-lg wrapper-UBE bn-VultureEspresso">
+      <div className="mobileNavManuWrapper hidden-sm hidden-md hidden-lg wrapper-UBE bn-Vulture St. Espresso">
           <div className="brandLogo">
               {/* Logo (Bạn cần chèn ảnh logo ở đây) */}
-              <a className="brandLogo-link" href="#" title="VultureEspresso Hotels & Resorts">
-                  <img className="brandLogo-image" alt="VultureEspresso Hotels & Resorts" src="//digital.ihg.com/is/content/ihg/ic-logo-updated?fmt=png-alpha" />
+              <a className="brandLogo-link" href="#" title="Vulture St. Espresso Hotels & Resorts">
+                  <img className="brandLogo-image" alt="Vulture St. Espresso Hotels & Resorts" src="//digital.ihg.com/is/content/ihg/ic-logo-updated?fmt=png-alpha" />
               </a>
           </div>
           <div className="mobileNav">

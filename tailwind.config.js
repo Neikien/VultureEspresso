@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#1c1c1c", // Màu than chì
+        primary: "#1b4d3e", // Màu than chì
         secondary: "#555555", // Màu xám chữ
-        accent: "#9e7660", // Màu nâu đồng
+        accent: "#51d961", // Màu nâu đồng
         offwhite: "#f9f9f9",
       },
       fontFamily: {

@@ -8,9 +8,9 @@ export default function Footer() {
       <div className="max-w-[90%] mx-auto flex flex-col lg:flex-row justify-between gap-10">
         <div>
           <h3 className="font-serif text-2xl text-white mb-4">
-            VultureEspresso
+            Vulture St. Espresso
           </h3>
-          <p className="text-sm font-light">Luxury Resorts & Hotels.</p>
+          <p className="text-sm font-light">Green Cafe</p>
         </div>
         <div className="flex gap-16">
           <div>

@@ -27,11 +27,11 @@ const offersData = [
   },
   {
     id: 3,
-    title: "Club VultureEspresso Experience",
+    title: "Club Vulture St. Espresso Experience",
     category: "Exclusive",
     image:
       "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1200&auto=format&fit=crop",
-    desc: "Elevate your stay with access to the Club VultureEspresso Lounge.",
+    desc: "Elevate your stay with access to the Club Vulture St. Espresso Lounge.",
     details: ["Lounge Access", "Evening Cocktails", "Private Check-in"],
   },
   {

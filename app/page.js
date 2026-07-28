@@ -94,10 +94,10 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-5 z-10 mt-[-40px]">
           <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl leading-none mb-6 animate-fade-in-up">
-            The <br /> VultureEspresso Life
+             <br /> Vulture St. Espresso
           </h1>
           <p className="text-base md:text-xl font-light tracking-[3px] max-w-xl opacity-90 animate-fade-in-up delay-200 uppercase">
-            Luxury without limits.
+            Fresh & Pure
           </p>
         </div>
       </div>
@@ -106,16 +106,13 @@ export default function Home() {
       <section className="pt-20 pb-12 px-5">
         <div className="max-w-[90%] mx-auto text-left">
           <h1 className="font-serif text-4xl lg:text-5xl text-primary mb-6 leading-tight">
-            Opening Doors to a <br /> World of Fascination
+            Opening Doors to a <br /> Green Life
           </h1>
           <p className="text-lg text-secondary max-w-4xl mb-10 leading-relaxed font-light">
-            We believe travel is more than a destination. It’s a journey that
-            expands minds, connects cultures, and ignites possibilities. As the
-            pioneers of luxury travel, VultureEspresso Hotels & Resorts invites
-            you into a world where extraordinary things happen.
+            We are proud to be a cafe located in the heart of West End that has a secret garden. All-day breakfast and lunch is a full mixture of healthy, classics and creative recipes (GF, DF, Vegetarian, Vegan options included). Coffee by Supreme Coffee Roaster, a Queensland-based business.
           </p>
           <h2 className="font-serif text-2xl text-primary border-b border-gray-200 pb-3 inline-block">
-            Discover indulgent escapes in remarkable destinations
+            Discover our recipes
           </h2>
         </div>
       </section>
@@ -141,7 +138,7 @@ export default function Home() {
               ))
             ) : (
               <div className="text-gray-400 text-sm pb-3">
-                Loading hotels...
+                Loading recipes...
               </div>
             )}
           </div>
@@ -260,12 +257,12 @@ export default function Home() {
           />
           <div className="relative lg:absolute top-0 lg:top-1/2 right-0 lg:right-[8%] lg:transform lg:-translate-y-1/2 bg-white p-10 lg:p-16 max-w-xl shadow-none lg:shadow-xl mt-[-50px] lg:mt-0 mx-5 lg:mx-0 border border-gray-100 lg:border-none">
             <h2 className="font-serif text-3xl lg:text-4xl text-primary mb-6 leading-tight">
-              VultureEspresso <br /> Ambassador
+              Vulture St. Espresso <br /> Ambassador
             </h2>
             <p className="text-base text-secondary font-light leading-loose mb-8">
               Turn every trip into something extraordinary. Elevate your stay
               with our loyalty program and take advantage of exclusive benefits
-              available at over 220 destinations worldwide.
+              available at over 220 menu items worldwide.
             </p>
             <a
               href="/ambassador"

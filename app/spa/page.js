@@ -72,7 +72,7 @@ export default function SpaPage() {
             </h2>
             <p className="text-lg text-secondary font-light leading-loose mb-10">
               Step into a world of tranquility. Our spa philosophy is grounded
-              in the belief that wellness is a journey, not a destination. We
+              in the belief that wellness is a journey, not a menu. We
               combine ancient Asian healing traditions with modern techniques to
               create a personalized experience for every guest.
             </p>

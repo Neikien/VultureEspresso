@@ -7,10 +7,10 @@ export default function BookingBar({ className = "", id = "" }) {
       id={id}
       className={`bg-white shadow-2xl rounded-sm p-6 flex flex-col lg:flex-row items-center gap-6 border border-gray-100 ${className}`}
     >
-      {/* Destination */}
+      {/* menu */}
       <div className="flex-1 w-full border-b lg:border-b-0 lg:border-r border-gray-200 pb-4 lg:pb-0 lg:px-4">
         <label className="block text-xs font-bold text-gray-400 tracking-widest mb-2">
-          DESTINATION
+          menu
         </label>
         <input
           type="text"

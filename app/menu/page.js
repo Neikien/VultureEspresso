@@ -6,7 +6,7 @@ import Link from "next/link";
 
 // 1. DANH SÁCH ẢNH MOCK DATA (Dùng để hiển thị cho đẹp vì DB chưa có ảnh xịn)
 const MOCK_IMAGES = [
-  "https://digital.ihg.com/is/image/ihg/VultureEspresso-hanoi-4068417844-16x9?", // Ảnh 1 -HN
+  "https://digital.ihg.com/is/image/ihg/Vulture St. Espresso-hanoi-4068417844-16x9?", // Ảnh 1 -HN
   "https://phuquoc.regenthotels.com/sites/rpq/files/styles/width_1920/public/homepage/Drone%20beach%20%282%29.jpg?itok=sIrMX5EB", // Ảnh 2 - ĐN
   "https://phuquoc.regenthotels.com/sites/rpq/files/styles/height_1400/public/homepage/OneBedroomSkyPoolVilla.jpg?itok=02RUSs_N", // Ảnh 3 - NT
   "https://phuquoc.regenthotels.com/sites/rpq/files/styles/height_1400/public/homepage/R6WI8638%20copy.jpg?itok=1AeuwdT6", // Ảnh 4 Da Lat
@@ -16,7 +16,7 @@ const MOCK_IMAGES = [
 
 const regions = ["All", "Asia", "Europe", "Americas", "Oceania"];
 
-export default function DestinationsPage() {
+export default function MenuPage() {
   const [selectedRegion, setSelectedRegion] = useState("All");
   const [hotels, setHotels] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -74,7 +74,7 @@ export default function DestinationsPage() {
       <div className="relative h-[60vh] w-full overflow-hidden bg-gray-900">
         <Image
           src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop"
-          alt="Destinations Hero"
+          alt="Menu"
           fill
           priority
           className="object-cover opacity-80"
@@ -85,7 +85,7 @@ export default function DestinationsPage() {
             Discover The World
           </p>
           <h1 className="font-serif text-6xl md:text-8xl mb-6 animate-fade-in-up delay-100">
-            Our Destinations
+            Our Menu
           </h1>
         </div>
       </div>
@@ -95,7 +95,7 @@ export default function DestinationsPage() {
         {/* Intro & Filter */}
         <div className="mb-20">
           <h2 className="font-serif text-4xl lg:text-5xl text-primary mb-10 leading-tight">
-            Let our newest openings inspire your next journey
+            Let take a look at our menu and choose your favorite dishes.
           </h2>
 
           {/* Filter Tabs */}
@@ -119,7 +119,7 @@ export default function DestinationsPage() {
         {/* LOADING */}
         {loading ? (
           <div className="text-center py-20 text-gray-400 font-serif text-xl">
-            Loading destinations...
+            Loading menu ...
           </div>
         ) : (
           /* 3. GRID KHÁCH SẠN */
@@ -167,7 +167,7 @@ export default function DestinationsPage() {
             ) : (
               // Empty State
               <div className="col-span-full text-center py-20 text-gray-400 font-serif text-xl">
-                No hotels found in {selectedRegion}.
+                No recipe found in {selectedRegion}.
               </div>
             )}
           </div>

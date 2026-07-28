@@ -61,9 +61,9 @@ const BookingHeader = ({ onSearch, isLoading }) => {
             Điểm đến
           </label>
           <select
-            value={bookingParams.destination}
+            value={bookingParams.menu}
             onChange={(e) =>
-              updateBookingParams({ destination: e.target.value })
+              updateBookingParams({ menu: e.target.value })
             }
             className="w-full text-xl font-serif text-primary outline-none bg-transparent cursor-pointer"
           >
@@ -145,7 +145,7 @@ export default function BookingPage() {
     setSearchStatus("Đang tải dữ liệu...");
 
     console.log("🔵 --- BẮT ĐẦU QUÁ TRÌNH TÌM KIẾM ---");
-    console.log("📍 Điểm đến đang chọn:", bookingParams.destination);
+    console.log("📍 Điểm đến đang chọn:", bookingParams.menu);
 
     try {
       // API HOTELS
@@ -162,7 +162,7 @@ export default function BookingPage() {
       console.log(`✅ API Hotels trả về ${hotels.length} khách sạn.`);
 
       // LOC HOTEL
-      const keyword = removeAccents(bookingParams.destination);
+      const keyword = removeAccents(bookingParams.menu);
       console.log(`🔎 Từ khóa tìm kiếm (đã bỏ dấu): "${keyword}"`);
 
       const matchedHotel = hotels.find((h) => {
@@ -185,7 +185,7 @@ export default function BookingPage() {
           `⚠️ Không khớp khách sạn nào. Dùng chế độ FALLBACK (Lấy 20 phòng bất kỳ).`
         );
         setSearchStatus(
-          `Không tìm thấy KS tại ${bookingParams.destination}. Gợi ý phòng khác:`
+          `Không tìm thấy KS tại ${bookingParams.menu}. Gợi ý phòng khác:`
         );
         // Fallback để luôn hiện phòng
         roomsUrl = `https://khachsan-backend-production-9810.up.railway.app/rooms/?skip=0&limit=20`;
@@ -267,7 +267,7 @@ export default function BookingPage() {
       <main className="max-w-[1320px] mx-auto px-5 pb-24">
         <div className="mb-8 text-xs font-bold tracking-widest text-gray-400 uppercase">
           Home &gt; Booking &gt;{" "}
-          <span className="text-primary">{bookingParams.destination}</span>
+          <span className="text-primary">{bookingParams.menu}</span>
         </div>
 
         {searchStatus && (

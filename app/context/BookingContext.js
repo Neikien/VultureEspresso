@@ -19,7 +19,7 @@ export function BookingProvider({ children }) {
     checkOutDate: format(tomorrow, "yyyy-MM-dd"),
     rooms: 1,
     guests: 2,
-    destination: "Hà Nội",
+    menu: "Hà Nội",
   });
 
   const updateBookingParams = (newParams) => {
