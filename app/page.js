@@ -10,9 +10,9 @@ export default function Home() {
   // --- 1. LOGIC SLIDER HERO ---
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80",
+    //bổ sung thêm ảnh để lướt qua lướt lại được
     "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=1920&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1920&auto=format&fit=crop",
+    //bổ sung thêm ảnh được
   ];
 
   useEffect(() => {
