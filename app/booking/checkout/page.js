@@ -34,7 +34,7 @@ function CheckoutContent() {
 
   useEffect(() => {
     if (!user) {
-      alert("Vui lòng đăng nhập!");
+      alert("Vui lòng sign in!");
       router.push("/login");
       return;
     }

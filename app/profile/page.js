@@ -86,7 +86,7 @@ export default function ProfilePage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <Link href="/login" className="text-primary underline">
-          Vui lòng đăng nhập
+          Vui lòng sign in
         </Link>
       </div>
     );

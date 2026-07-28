@@ -87,13 +87,6 @@ export default function ExperiencePage() {
                 A personalized, science-backed jet lag plan available to
                 optimize your travel experience.
               </p>
-              {/* UPDATED LINK */}
-              <Link
-                href="/offers"
-                className="text-xs font-bold uppercase tracking-widest text-accent border-b border-accent pb-1 hover:text-primary hover:border-primary transition-colors"
-              >
-                Learn More &gt;
-              </Link>
             </div>
 
             {/* Item 2 - Restorative Design */}
@@ -113,13 +106,6 @@ export default function ExperiencePage() {
                 Carefully curated spaces designed to enhance relaxation and
                 restoration during your stay.
               </p>
-              {/* UPDATED LINK */}
-              <Link
-                href="/offers"
-                className="text-xs font-bold uppercase tracking-widest text-accent border-b border-accent pb-1 hover:text-primary hover:border-primary transition-colors"
-              >
-                Learn More &gt;
-              </Link>
             </div>
 
             {/* Item 3 - Flexible Dining */}
@@ -139,13 +125,6 @@ export default function ExperiencePage() {
                 Balanced and wholesome dishes available on-demand to suit your
                 schedule.
               </p>
-              {/* UPDATED LINK */}
-              <Link
-                href="/offers"
-                className="text-xs font-bold uppercase tracking-widest text-accent border-b border-accent pb-1 hover:text-primary hover:border-primary transition-colors"
-              >
-                Learn More &gt;
-              </Link>
             </div>
           </div>
         </div>
@@ -171,13 +150,6 @@ export default function ExperiencePage() {
               unique and personal to you, every milestone is crafted to be truly
               unforgettable.
             </p>
-            {/* UPDATED LINK */}
-            <Link
-              href="/offers"
-              className="inline-block border border-primary px-10 py-4 text-sm font-bold tracking-[2px] uppercase hover:bg-primary hover:text-white transition-all w-fit"
-            >
-              Discover More
-            </Link>
           </div>
         </div>
       </section>
@@ -195,13 +167,6 @@ export default function ExperiencePage() {
               celebrate traditional local recipes with a global twist, crafting
               each bite from the freshest ingredients.
             </p>
-            {/* UPDATED LINK */}
-            <Link
-              href="/offers"
-              className="inline-block border border-primary px-10 py-4 text-sm font-bold tracking-[2px] uppercase hover:bg-primary hover:text-white transition-all w-fit"
-            >
-              Learn More
-            </Link>
           </div>
 
           {/* Cột ẢNH bên PHẢI */}
@@ -236,13 +201,6 @@ export default function ExperiencePage() {
               inspired treats such as afternoon tea, evening canapés, and
               signature serves.
             </p>
-            {/* UPDATED LINK */}
-            <Link
-              href="/offers"
-              className="inline-block border border-primary px-10 py-4 text-sm font-bold tracking-[2px] uppercase hover:bg-primary hover:text-white transition-all w-fit"
-            >
-              Learn More
-            </Link>
           </div>
         </div>
       </section>

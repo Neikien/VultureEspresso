@@ -131,14 +131,6 @@ export default function AboutusPage() {
                   </li>
                 ))}
               </ul>
-
-              {/* Link Discover More */}
-              <Link
-                href={`/membership-benefits#${tabContent[activeTab].linkId}`}
-                className="inline-block border border-primary px-10 py-4 text-sm font-bold tracking-[2px] uppercase hover:bg-primary hover:text-white transition-all"
-              >
-                Discover More
-              </Link>
             </div>
 
             {/* Cột Ảnh */}

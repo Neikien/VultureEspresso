@@ -42,7 +42,7 @@ const RoomCard = ({
       console.log('🔍 Token từ localStorage:', token ? 'Có' : 'Không');
       
       if (!token || token === 'undefined' || token === 'null') {
-        setProfileError('Vui lòng đăng nhập để đặt phòng');
+        setProfileError('Vui lòng sign in để đặt phòng');
         setShowProfileModal(true);
         return false;
       }

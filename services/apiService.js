@@ -118,7 +118,7 @@ export async function getProfile(token = null) {
 
 // --- 3. REGISTER (ĐÃ SỬA: Luôn thành công dù thiếu ID) ---
 export async function register(userData) {
-  console.log("🚀 [API] Bắt đầu Đăng ký...");
+  console.log("🚀 [API] Bắt đầu Sign up...");
 
   const email = String(userData.Email || "").trim();
   const password = userData.MatKhau || "";
@@ -137,9 +137,9 @@ export async function register(userData) {
   if (!signupResponse.ok) {
     const err = await signupResponse.json().catch(() => ({}));
     if (signupResponse.status !== 400 && signupResponse.status !== 409) {
-      throw new Error(err.detail || "Đăng ký thất bại");
+      throw new Error(err.detail || "Sign up failed");
     }
-    console.warn("⚠️ User đã tồn tại, chuyển sang Login...");
+    console.warn("⚠️ User already exists, switching to Login...");
   }
 
   // B2: Login
@@ -186,7 +186,7 @@ export async function register(userData) {
       });
     } catch (e) {
       console.warn(
-        "⚠️ Có lỗi khi tạo Customer (nhưng vẫn cho Đăng ký thành công):",
+        "⚠️ Có lỗi khi tạo Customer (nhưng vẫn cho Sign up thành công):",
         e
       );
     }

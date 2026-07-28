@@ -47,11 +47,11 @@ export default function RegisterPage() {
       await apiService.register(formData);
 
       // 3. Thành công
-      alert("🎉 Đăng ký thành công! Đang chuyển về trang chủ...");
+      alert("Sign up thành công! Đang chuyển về trang chủ...");
       router.push("/"); // Hoặc router.push("/login")
     } catch (err) {
-      console.error("Lỗi đăng ký:", err);
-      setError(err.message || "Đăng ký thất bại. Vui lòng thử lại.");
+      console.error("Lỗi sign up:", err);
+      setError(err.message || "Sign up failed. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -83,7 +83,7 @@ export default function RegisterPage() {
             Tạo Tài Khoản
           </h2>
           <p className="text-gray-500 text-sm mb-6">
-            Điền thông tin để đăng ký thành viên.
+            Điền thông tin để sign up thành viên.
           </p>
 
           {error && (
@@ -214,7 +214,7 @@ export default function RegisterPage() {
                 disabled={isLoading}
                 className="w-full bg-primary text-white py-4 font-bold uppercase tracking-widest hover:bg-gray-800 transition-all disabled:bg-gray-400 rounded shadow-lg"
               >
-                {isLoading ? "Đang xử lý..." : "Đăng Ký Ngay"}
+                {isLoading ? "Đang xử lý..." : "Sign Up Now"}
               </button>
             </div>
           </form>
@@ -225,7 +225,7 @@ export default function RegisterPage() {
               href="/login"
               className="text-primary font-bold hover:underline"
             >
-              Đăng nhập tại đây
+              Sign in tại đây
             </Link>
           </div>
         </div>

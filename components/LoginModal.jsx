@@ -106,7 +106,7 @@ export default function LoginModal({ isOpen, onClose }) {
         localStorage.setItem("user", JSON.stringify(userInfo));
         console.log("👤 Đã lưu User:", userInfo);
 
-        alert("🎉 Đăng nhập thành công!");
+        alert("🎉 sign in thành công!");
 
         // E. Reload trang để App nhận diện
         window.location.href = "/";

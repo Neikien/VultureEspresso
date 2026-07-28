@@ -240,7 +240,7 @@ export default function BookingPage() {
 
   const handleBookRoom = (room) => {
     if (!user) {
-      alert("Vui lòng đăng nhập để đặt phòng!");
+      alert("Vui lòng sign in để đặt phòng!");
       return;
     }
     router.push(`/booking/checkout?roomId=${room.MaPhong}`);
