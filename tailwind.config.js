@@ -8,10 +8,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#1b4d3e", // Màu than chì
-        secondary: "#555555", // Màu xám chữ
-        accent: "#51d961", // Màu nâu đồng
-        offwhite: "#f9f9f9",
+        primary: "#121c14", // Màu than chì
+        secondary: "#3c5b37", // Màu xám chữ
+        accent: "#04aa17", // Màu nâu đồng
+        offwhite: "#93c395",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
