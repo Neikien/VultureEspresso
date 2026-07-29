@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Papa from "papaparse";
+
+const DEFAULT_IMAGE = "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=800&auto=format&fit=crop";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,6 +13,11 @@ export default function Home() {
     "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=1920&auto=format&fit=crop",
   ];
 
+  // State lưu danh sách món ăn tải từ Google Sheets
+  const [recipes, setRecipes] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // 1. Banner Slider background
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -17,44 +25,48 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // Danh sách 5 món ăn / thức uống cho phần "Discover our recipes"
-  const recipes = [
-    {
-      id: 1,
-      name: "Signature Vulture Espresso",
-      category: "Hot Drinks",
-      image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?q=80&w=800&auto=format&fit=crop",
-      desc: "Rich, bold double shot with notes of dark chocolate and toasted caramel.",
-    },
-    {
-      id: 2,
-      name: "Avocado Smash on Sourdough",
-      category: "Brunch",
-      image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=800&auto=format&fit=crop",
-      desc: "Fresh smashed avocado, heirloom tomatoes, crumbled feta, and poached eggs.",
-    },
-    {
-      id: 3,
-      name: "Classic Eggs Benedict",
-      category: "All Day",
-      image: "https://images.unsplash.com/photo-1608039829572-78524f79c4c7?q=80&w=800&auto=format&fit=crop",
-      desc: "Poached free-range eggs, savory bacon, and house-made hollandaise sauce.",
-    },
-    {
-      id: 4,
-      name: "Iced Caramel Macchiato",
-      category: "Cold Drinks",
-      image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?q=80&w=800&auto=format&fit=crop",
-      desc: "Fresh espresso poured over cold milk, ice, and sweet caramel drizzle.",
-    },
-    {
-      id: 5,
-      name: "Artisanal Brunch Bowl",
-      category: "Lunch",
-      image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=800&auto=format&fit=crop",
-      desc: "Wholesome grains, fresh greens, roasted veggies, and house dressing.",
-    },
-  ];
+  // 2. Fetch dữ liệu từ Google Sheets để làm vòng xoay món ăn
+  useEffect(() => {
+    const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxTrhMac3rFsYzkSozJDuEOwy2qcSIapkwDG1wpYt_U2pau4vdJgiqTXicnXsny-iHedj_UxBC3jQ1/pub?gid=176867812&single=true&output=csv';
+
+    fetch(csvUrl)
+      .then((response) => response.text())
+      .then((csvText) => {
+        Papa.parse(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            const formattedData = results.data.map((item, index) => ({
+              id: item["STT"] || index + 1,
+              name: item["Tên món"] || "Món chưa có tên",
+              desc: item["giới thiệu chung"] || "",
+              category: item["Phân loại"] ? item["Phân loại"].trim() : "all day",
+              image: (item["link ảnh"] && item["link ảnh"].trim() !== "") 
+                ? item["link ảnh"].trim() 
+                : DEFAULT_IMAGE,
+            }));
+            setRecipes(formattedData);
+          },
+        });
+      })
+      .catch((error) => console.error("Lỗi tải menu trang chủ:", error));
+  }, []);
+
+  // 3. Hiệu ứng tự động chuyển đổi 5 món sau mỗi 6 giây để chạy vòng tròn hết menu
+  useEffect(() => {
+    if (recipes.length === 0) return;
+
+    const recipeInterval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 5) % recipes.length);
+    }, 6000);
+
+    return () => clearInterval(recipeInterval);
+  }, [recipes]);
+
+  // Lấy ra đúng 5 món ăn để hiển thị tại thời điểm hiện tại
+  const displayedRecipes = recipes.length > 0 
+    ? Array.from({ length: 5 }, (_, i) => recipes[(currentIndex + i) % recipes.length])
+    : [];
 
   return (
     <main className="min-h-screen bg-white">
@@ -93,39 +105,45 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. 5 RECIPES GRID SECTION */}
+      {/* 3. 5 RECIPES GRID SECTION (Lăn qua lăn lại tự động) */}
       <section className="pb-16 px-5">
         <div className="max-w-[90%] mx-auto">
-          {/* Lưới hiển thị 5 ảnh món ăn */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {recipes.map((recipe) => (
-              <div 
-                key={recipe.id}
-                className="group bg-gray-50 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
-              >
-                <div className="relative h-64 w-full overflow-hidden">
-                  <Image
-                    src={recipe.image}
-                    alt={recipe.name}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5 flex flex-col flex-grow justify-between">
-                  <div>
-                    <span className="text-[10px] font-bold text-accent tracking-[2px] uppercase block mb-1">
+          {/* Lưới hiển thị 5 ảnh món ăn có hiệu ứng mờ dần (fade) khi đổi batch */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 transition-all duration-700 ease-in-out">
+            {displayedRecipes.length > 0 ? (
+              displayedRecipes.map((recipe, idx) => (
+                <div 
+                  key={`${recipe.id}-${idx}`}
+                  className="group bg-gray-50 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between animate-fade-in"
+                >
+                  <div className="relative h-64 w-full overflow-hidden">
+                    <Image
+                      src={recipe.image}
+                      alt={recipe.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold tracking-widest uppercase text-primary">
                       {recipe.category}
-                    </span>
-                    <h3 className="font-serif text-lg text-primary mb-2 leading-snug">
-                      {recipe.name}
-                    </h3>
-                    <p className="text-secondary text-xs font-light leading-relaxed mb-4">
-                      {recipe.desc}
-                    </p>
+                    </div>
+                  </div>
+                  <div className="p-5 flex flex-col flex-grow justify-between">
+                    <div>
+                      <h3 className="font-serif text-lg text-primary mb-2 leading-snug">
+                        {recipe.name}
+                      </h3>
+                      <p className="text-secondary text-xs font-light leading-relaxed mb-4 line-clamp-3">
+                        {recipe.desc}
+                      </p>
+                    </div>
                   </div>
                 </div>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-10 text-gray-400">
+                Đang tải thực đơn vòng xoay...
               </div>
-            ))}
+            )}
           </div>
 
           {/* Nút Discover More chuyển sang trang Menu */}
