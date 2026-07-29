@@ -2,49 +2,45 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link"; // Đảm bảo đã import Link
+import Link from "next/link";
 
 // DỮ LIỆU NỘI DUNG TỪNG TAB
 const tabContent = {
   recognition: {
     title: "Elevated Recognition",
-    desc: "We believe your About us should be rewarded instantly. Enjoy priority check-in, a dedicated support line, and exclusive access to our member-only private sales.",
+    desc: "We believe your visits should be rewarded instantly. Enjoy priority seating, a dedicated support line, and exclusive access to our member-only private tasting events.",
     image:
-      "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop",
-    benefits: ["Priority Check-in", "Dedicated Support", "Welcome Amenity"],
-    linkId: "elevated-recognition",
+      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200&auto=format&fit=crop",
+    benefits: ["Priority Seating", "Dedicated Support", "Welcome Treat"],
   },
   enhancements: {
-    title: "Stay Enhancements",
-    desc: "Make every stay more comfortable with complimentary room upgrades, premium Wi-Fi, and daily housekeeping tailored to your preferences.",
+    title: "Cafe Enhancements",
+    desc: "Make every visit more comfortable with customized coffee blends, premium service, and personalized table setups tailored to your preferences.",
     image:
-      "https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop",
-    benefits: ["Room Upgrades", "Premium Wi-Fi", "Turn-down Service"],
-    linkId: "stay-enhancements",
+      "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?q=80&w=1200&auto=format&fit=crop",
+    benefits: ["Custom Brews", "Preferred Seating Area", "Special Requests"],
   },
   dining: {
-    title: "Restaurant Provisions",
-    desc: "Savor the moment with exclusive dining discounts at our award-winning restaurants and bars. Members enjoy up to 20% off food and beverages.",
+    title: "Dining Provisions",
+    desc: "Savor the moment with exclusive discounts across our all-day breakfast and lunch menus. Members enjoy special treats on every culinary journey.",
     image:
-      "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1525351484163-7529414344d8?q=80&w=1200&auto=format&fit=crop",
     benefits: [
-      "Dining Discounts",
+      "Menu Discounts",
       "Priority Reservations",
-      "Complimentary Breakfast",
+      "Complimentary Side/Drink",
     ],
-    linkId: "restaurant-provisions",
   },
   time: {
     title: "Luxury of Time",
-    desc: "Relax without the rush. Take advantage of guaranteed late check-out until 4 PM and early check-in to maximize your stay.",
+    desc: "Relax without the rush. Take advantage of extended reservation holds and flexible timing to maximize your peaceful moments in our garden.",
     image:
-      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop",
-    benefits: ["Late Check-out (4PM)", "Early Check-in", "24hr Stay"],
-    linkId: "luxury-of-time",
+      "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1200&auto=format&fit=crop",
+    benefits: ["Extended Table Hold", "Flexible Booking", "Quiet Corner Access"],
   },
 };
 
-export default function AboutusPage() {
+export default function AboutUsPage() {
   const [activeTab, setActiveTab] = useState("recognition");
 
   return (
@@ -52,8 +48,8 @@ export default function AboutusPage() {
       {/* 1. HERO BANNER */}
       <div className="relative h-[60vh] w-full overflow-hidden bg-gray-900">
         <Image
-          src="https://digital.ihg.com/is/image/ihg/ic-brand-refresh-homepg-offer-hero-box-lvp-1440x636"
-          alt="About us"
+          src="https://images.unsplash.com/photo-1559496417-e7f25cb247f3?q=80&w=1920&auto=format&fit=crop"
+          alt="About Us"
           fill
           priority
           className="object-cover opacity-80"
@@ -61,32 +57,24 @@ export default function AboutusPage() {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-5">
           <p className="text-sm font-bold tracking-[4px] uppercase mb-6 animate-fade-in-up">
-            IHG One Rewards
+            Vulture St. Espresso
           </p>
-          <h1 className="font-serif text-6xl md:text-8xl mb-8 animate-fade-in-up delay-100">
-            Vulture St. Espresso Ambassador
+          <h1 className="font-serif text-5xl md:text-7xl mb-8 animate-fade-in-up delay-100">
+            About Our Story & Values
           </h1>
-
-          {/* ĐÃ SỬA: Thay button bằng Link trỏ về /register */}
-          <Link
-            href="/register"
-            className="inline-block bg-white text-primary px-10 py-4 text-sm font-bold tracking-[2px] uppercase hover:bg-accent hover:text-white transition-all animate-fade-in-up delay-200"
-          >
-            Join For Free
-          </Link>
         </div>
       </div>
 
       {/* 2. INTRO TEXT */}
       <section className="pt-24 pb-12 px-5 text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-serif text-5xl lg:text-6xl text-primary mb-8 leading-tight">
+          <h2 className="font-serif text-4xl lg:text-5xl text-primary mb-8 leading-tight">
             Exceptional experiences, <br /> exclusive benefits
           </h2>
           <p className="text-lg text-secondary font-light leading-loose max-w-3xl mx-auto">
-            Placing you at the heart of every celebration. From intimate dinners
-            to joyful anniversaries or lively weekender, we curate your special
-            occasion and transform it into something incredible.
+            Placing you at the heart of every gathering. From quiet morning coffees
+            to joyful weekend brunches, we curate your special moments and
+            transform them into something incredible within our secret garden.
           </p>
         </div>
       </section>

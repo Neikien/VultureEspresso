@@ -14,7 +14,15 @@ const MOCK_IMAGES = [
   "https://phuquoc.regenthotels.com/sites/rpq/files/styles/height_1400/public/homepage/DSC07735re2.jpg?itok=7xE6xiRd", // Ảnh 6 Thanh Hóa
 ];
 
-const regions = ["All", "Asia", "Europe", "Americas", "Oceania"];
+const regions = [
+    "All Day",
+    "Brunch",
+    "Lunch",
+    "Hot Drinks",
+    "Cold Drinks",
+    "Juices & Smoothies",
+    "Beer / Wine / Cocktails"
+  ];
 
 export default function MenuPage() {
   const [selectedRegion, setSelectedRegion] = useState("All");
@@ -82,7 +90,7 @@ export default function MenuPage() {
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-5">
           <p className="text-sm font-bold tracking-[4px] uppercase mb-6 animate-fade-in-up">
-            Discover The World
+            Discover The New Flavors
           </p>
           <h1 className="font-serif text-6xl md:text-8xl mb-6 animate-fade-in-up delay-100">
             Our Menu
