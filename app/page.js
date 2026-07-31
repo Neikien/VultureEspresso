@@ -13,9 +13,9 @@ export default function Home() {
     "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=1920&auto=format&fit=crop",
   ];
 
-  // State lưu danh sách món ăn tải từ Google Sheets
-  const [recipes, setRecipes] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [foods, setFoods] = useState([]);
+  const [drinks, setDrinks] = useState([]);
+  const [displayedItems, setDisplayedItems] = useState([]);
 
   // 1. Banner Slider background
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // 2. Fetch dữ liệu từ Google Sheets để làm vòng xoay món ăn
+  // 2. Fetch dữ liệu từ Google Sheets và phân loại đúng 3 món ăn - 4 loại nước
   useEffect(() => {
     const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxTrhMac3rFsYzkSozJDuEOwy2qcSIapkwDG1wpYt_U2pau4vdJgiqTXicnXsny-iHedj_UxBC3jQ1/pub?gid=176867812&single=true&output=csv';
 
@@ -40,33 +40,56 @@ export default function Home() {
               id: item["STT"] || index + 1,
               name: item["Tên món"] || "Món chưa có tên",
               desc: item["giới thiệu chung"] || "",
-              category: item["Phân loại"] ? item["Phân loại"].trim() : "all day",
+              category: item["Phân loại"] ? item["Phân loại"].trim().toUpperCase() : "ALL DAY",
               image: (item["link ảnh"] && item["link ảnh"].trim() !== "") 
                 ? item["link ảnh"].trim() 
                 : DEFAULT_IMAGE,
             }));
-            setRecipes(formattedData);
+
+            // 3 loại đầu là món ăn: ALL DAY, BRUNCH, LUNCH
+            const foodCategories = ["ALL DAY", "BRUNCH", "LUNCH"];
+            
+            // 4 loại sau là nước: HOT DRINKS, COLD DRINKS, JUICES & SMOOTHIES, BEER / WINE / COCKTAILS
+            const drinkCategories = ["HOT DRINKS", "COLD DRINKS", "JUICES & SMOOTHIES", "BEER / WINE / COCKTAILS"];
+
+            const foodList = formattedData.filter(item => 
+              foodCategories.some(cat => item.category.includes(cat))
+            );
+            
+            const drinkList = formattedData.filter(item => 
+              drinkCategories.some(cat => item.category.includes(cat))
+            );
+
+            setFoods(foodList.length > 0 ? foodList : formattedData);
+            setDrinks(drinkList.length > 0 ? drinkList : formattedData);
           },
         });
       })
       .catch((error) => console.error("Lỗi tải menu trang chủ:", error));
   }, []);
 
-  // 3. Hiệu ứng tự động chuyển đổi 5 món sau mỗi 6 giây để chạy vòng tròn hết menu
+  // Hàm chọn ngẫu nhiên n phần tử từ một mảng
+  const getRandomItems = (arr, n) => {
+    if (!arr || arr.length === 0) return [];
+    const shuffled = [...arr].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, n);
+  };
+
+  // 3. Hiệu ứng random 3 món ăn và 2 món nước sau mỗi 6 giây
   useEffect(() => {
-    if (recipes.length === 0) return;
+    if (foods.length === 0 && drinks.length === 0) return;
 
-    const recipeInterval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 5) % recipes.length);
-    }, 6000);
+    const updateRandomSelection = () => {
+      const randomFoods = getRandomItems(foods, 3);
+      const randomDrinks = getRandomItems(drinks, 2);
+      setDisplayedItems([...randomFoods, ...randomDrinks]);
+    };
 
-    return () => clearInterval(recipeInterval);
-  }, [recipes]);
+    updateRandomSelection();
 
-  // Lấy ra đúng 5 món ăn để hiển thị tại thời điểm hiện tại
-  const displayedRecipes = recipes.length > 0 
-    ? Array.from({ length: 5 }, (_, i) => recipes[(currentIndex + i) % recipes.length])
-    : [];
+    const interval = setInterval(updateRandomSelection, 6000);
+    return () => clearInterval(interval);
+  }, [foods, drinks]);
 
   return (
     <main className="min-h-screen bg-white">
@@ -105,13 +128,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. 5 RECIPES GRID SECTION (Lăn qua lăn lại tự động) */}
+      {/* 3. 5 RECIPES GRID SECTION (3 Món ăn + 2 Món nước Random) */}
       <section className="pb-16 px-5">
         <div className="max-w-[90%] mx-auto">
-          {/* Lưới hiển thị 5 ảnh món ăn có hiệu ứng mờ dần (fade) khi đổi batch */}
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 transition-all duration-700 ease-in-out">
-            {displayedRecipes.length > 0 ? (
-              displayedRecipes.map((recipe, idx) => (
+            {displayedItems.length > 0 ? (
+              displayedItems.map((recipe, idx) => (
                 <div 
                   key={`${recipe.id}-${idx}`}
                   className="group bg-gray-50 overflow-hidden rounded-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between animate-fade-in"
@@ -141,7 +163,7 @@ export default function Home() {
               ))
             ) : (
               <div className="col-span-full text-center py-10 text-gray-400">
-                Đang tải thực đơn vòng xoay...
+                Đang tải thực đơn ngẫu nhiên...
               </div>
             )}
           </div>

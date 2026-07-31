@@ -14,27 +14,14 @@ export default function Footer() {
         </div>
         <div className="flex gap-16">
           <div>
-            <h4 className="text-white font-serif mb-4 text-sm">Company</h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="hover:text-white transition">
-                  Careers
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
             <h4 className="text-white font-serif mb-4 text-sm">Help</h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="#" className="hover:text-white transition">
-                  Contact
+                <Link href="/about" className="hover:text-white transition">
+                  About us
                 </Link>
+              </li>
+              <li>
               </li>
               <li>
                 <Link href="#" className="hover:text-white transition">
