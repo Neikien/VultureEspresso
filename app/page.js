@@ -25,7 +25,13 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  // 2. Fetch dữ liệu từ Google Sheets và phân loại đúng 3 món ăn - 4 loại nước
+  // 2. Xử lý nút Book Now chuyển hướng sang Obeeapp giống hệt Header
+  const handleBookNow = (e) => {
+    e.preventDefault();
+    window.location.href = "https://bookings.obeeapp.com/vulturestespresso";
+  };
+
+  // 3. Fetch dữ liệu từ Google Sheets và phân loại đúng 3 món ăn - 4 loại nước
   useEffect(() => {
     const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxTrhMac3rFsYzkSozJDuEOwy2qcSIapkwDG1wpYt_U2pau4vdJgiqTXicnXsny-iHedj_UxBC3jQ1/pub?gid=176867812&single=true&output=csv';
 
@@ -75,7 +81,7 @@ export default function Home() {
     return shuffled.slice(0, n);
   };
 
-  // 3. Hiệu ứng random 3 món ăn và 2 món nước sau mỗi 6 giây
+  // 4. Hiệu ứng random 3 món ăn và 2 món nước sau mỗi 6 giây
   useEffect(() => {
     if (foods.length === 0 && drinks.length === 0) return;
 
@@ -107,9 +113,17 @@ export default function Home() {
           <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl leading-none mb-6">
              <br /> Vulture St. Espresso
           </h1>
-          <p className="text-base md:text-xl font-light tracking-[3px] max-w-xl opacity-90 uppercase">
+          <p className="text-base md:text-xl font-light tracking-[3px] max-w-xl opacity-90 uppercase mb-8">
             Fresh & Pure
           </p>
+          
+          {/* Nút Book Now hoạt động giống hệt trên Header */}
+          <button
+            onClick={handleBookNow}
+            className="bg-accent text-white text-xs font-bold px-8 py-4 uppercase hover:bg-gray-800 transition-all shadow-md"
+          >
+            Book Now
+          </button>
         </div>
       </div>
 
@@ -168,13 +182,13 @@ export default function Home() {
             )}
           </div>
 
-          {/* Nút Discover More chuyển sang trang Menu */}
+          {/* Dòng link Discover Full Menu (đã đổi kiểu dáng giống Explore our space) */}
           <div className="mt-12 text-center">
             <Link
               href="/menu"
-              className="inline-block bg-primary text-white px-8 py-4 text-xs font-bold tracking-[2px] uppercase hover:bg-accent transition-colors"
+              className="inline-block text-xs font-bold uppercase tracking-[2px] text-primary hover:text-accent border-b border-primary hover:border-accent pb-1 transition-colors"
             >
-              Discover More (View Full Menu)
+              Discover full menu
             </Link>
           </div>
         </div>
@@ -193,9 +207,18 @@ export default function Home() {
             <h2 className="font-serif text-3xl lg:text-4xl text-primary mb-6 leading-tight">
               Vulture St. Espresso <br /> 
             </h2>
-            <p className="text-base text-secondary font-light leading-loose mb-8">
+            <p className="text-base text-secondary font-light leading-loose mb-6">
               "Join us in our hidden garden to enjoy wholesome meals, expertly brewed coffee from Supreme Coffee Roaster, and peaceful moments in the heart of the city."
             </p>
+
+            {/* Dòng link dẫn sang trang Experience đơn giản, tinh tế */}
+            <Link
+              href="/experience"
+              className="inline-block text-xs font-bold uppercase tracking-[2px] text-primary hover:text-accent border-b border-primary hover:border-accent pb-1 transition-colors"
+            >
+              Explore our space
+            </Link>
+
           </div>
         </div>
       </section>

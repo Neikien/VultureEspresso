@@ -10,7 +10,7 @@ const tabContent = {
     title: "Our Location",
     desc: "1/85 Vulture St, West End QLD 4101, Australia. Drop by to experience our secret garden, great coffee, and warm community atmosphere.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.483167425126!2d153.012574!3d-27.483167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b915a123456789%3A0x123456789abcdef!2s85%20Vulture%20St%2C%20West%20End%20QLD%204101!5e0!3m2!1sen!2sau!4v1650000000000!5m2!1sen!2sau",
-    highlights: ["Heart of West End", "Garden Seating Available", "Easy Street Access"],
+    highlights: [],
   },
   contact: {
     title: "Contact Us",
