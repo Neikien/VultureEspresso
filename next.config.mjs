@@ -16,7 +16,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "phuquoc.regenthotels.com", // <-- DÒNG MỚI THÊM VÀO ĐÂY
+        hostname: "phuquoc.regenthotels.com",
       },
       {
         protocol: "https",
@@ -24,11 +24,14 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-      // Nếu bạn muốn cho phép tất cả các server ảnh của Bing (tse1, tse2, tse3...)
-      // thì có thể thêm dòng dưới đây (tùy chọn):
       {
         protocol: "https",
         hostname: "upload.wikimedia.org",
+      },
+      // --- THÊM DOMAIN CLOUDINARY VÀO ĐÂY ---
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
       },
     ],
   },
