@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -21,14 +22,27 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 py-4 transition-all">
+    // Bạn có thể giảm py-4 thành py-2 hoặc py-3 ở thẻ header bên dưới nếu muốn thu gọn khoảng cách trên/dưới
+    <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100 py-2 transition-all">
       <div className="max-w-[95%] mx-auto flex justify-between items-center px-5">
-        {/* Logo */}
+        
+        {/* LOGO SECTION */}
+        {/* THÊM VÀ TỰ ĐIỀU CHỈNH KHOẢNG CÁCH DỊCH SANG PHẢI Ở ĐÂY: 
+            Ví dụ: ml-4, ml-6, hoặc ml-8 (hoặc chỉnh trực tiếp số pixel như ml-[20px]) */}
         <Link
           href="/"
-          className="font-serif text-xl font-semibold uppercase tracking-widest text-primary"
+          className="flex items-center ml-16" 
         >
-          Vulture St. Espresso
+          {/* Điều chỉnh kích thước w-14 h-14 hoặc w-12 h-12 nếu thấy vẫn to quá */}
+          <div className="relative w-16 h-16">
+            <Image
+              src="/logo.jpg"
+              alt="Vulture St. Espresso Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Navigation cho Desktop */}
@@ -79,10 +93,8 @@ export default function Header() {
             stroke="currentColor"
           >
             {isOpen ? (
-              // Icon dấu X khi đang mở
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
-              // Icon 3 gạch khi đang đóng
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
@@ -101,7 +113,7 @@ export default function Header() {
               <li key={item.name}>
                 <Link
                   href={item.path}
-                  onClick={() => setIsOpen(false)} // Bấm vào tự động đóng menu
+                  onClick={() => setIsOpen(false)}
                   className={`block py-2 transition-colors ${
                     pathname === item.path ? "text-accent" : "hover:text-accent"
                   }`}
@@ -112,7 +124,6 @@ export default function Header() {
             ))}
           </ul>
           
-          {/* Nút Book Now trong menu mobile */}
           <button
             onClick={(e) => {
               setIsOpen(false);
