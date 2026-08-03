@@ -177,7 +177,7 @@ export default function Home() {
               ))
             ) : (
               <div className="col-span-full text-center py-10 text-gray-400">
-                Đang tải thực đơn ngẫu nhiên...
+                Preparing delicious recipes for you...
               </div>
             )}
           </div>

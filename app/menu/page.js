@@ -50,7 +50,7 @@ export default function MenuPage() {
         });
       })
       .catch((error) => {
-        console.error("Lỗi khi tải menu từ Google Sheets:", error);
+        console.error("Error fetching menu:", error);
         setLoading(false);
       });
   }, []);
@@ -113,7 +113,7 @@ export default function MenuPage() {
         {/* 3. GRID MENU ITEMS */}
         {loading ? (
           <div className="text-center py-20 text-gray-400 font-serif text-xl">
-            Đang tải thực đơn từ Google Sheets...
+            Preparing delicious recipes for you...
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-x-16 gap-y-16">
@@ -157,7 +157,7 @@ export default function MenuPage() {
               ))
             ) : (
               <div className="col-span-full text-center py-20 text-gray-400 font-serif text-xl">
-                Không tìm thấy món ăn nào trong mục "{selectedCategory}".
+                No items found in the "{selectedCategory}" category.
               </div>
             )}
           </div>
