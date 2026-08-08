@@ -31,7 +31,7 @@ export default function Home() {
     window.location.href = "https://bookings.obeeapp.com/vulturestespresso";
   };
 
-  // 3. Fetch dữ liệu từ Google Sheets và phân loại đúng 3 món ăn - 4 loại nước
+  // 3. Fetch dữ liệu từ Google Sheets, loại bỏ các món Side/Sides và phân loại
   useEffect(() => {
     const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRxTrhMac3rFsYzkSozJDuEOwy2qcSIapkwDG1wpYt_U2pau4vdJgiqTXicnXsny-iHedj_UxBC3jQ1/pub?gid=176867812&single=true&output=csv';
 
@@ -42,20 +42,27 @@ export default function Home() {
           header: true,
           skipEmptyLines: true,
           complete: (results) => {
-            const formattedData = results.data.map((item, index) => ({
-              id: item["STT"] || index + 1,
-              name: item["Tên món"] || "Món chưa có tên",
-              desc: item["giới thiệu chung"] || "",
-              category: item["Phân loại"] ? item["Phân loại"].trim().toUpperCase() : "ALL DAY",
-              image: (item["link ảnh"] && item["link ảnh"].trim() !== "") 
-                ? item["link ảnh"].trim() 
-                : DEFAULT_IMAGE,
-            }));
+            const formattedData = results.data
+              .map((item, index) => {
+                const name = item["Tên món"] ? item["Tên món"].trim() : "Món chưa có tên";
+                const category = item["Phân loại"] ? item["Phân loại"].trim().toUpperCase() : "ALL DAY";
+                
+                return {
+                  id: item["STT"] || index + 1,
+                  name: name,
+                  desc: item["giới thiệu chung"] || "",
+                  category: category,
+                  // Kiểm tra xem tên món hoặc phân loại có chứa từ side/sides không
+                  isSide: name.toLowerCase().includes("side") || category.toLowerCase().includes("side"),
+                  image: (item["link ảnh"] && item["link ảnh"].trim() !== "") 
+                    ? item["link ảnh"].trim() 
+                    : DEFAULT_IMAGE,
+                };
+              })
+              // LỌC BỎ CÁC MÓN CÓ CHỨA SIDE HOẶC SIDES Ở ĐÂY
+              .filter((item) => !item.isSide);
 
-            // 3 loại đầu là món ăn: ALL DAY, BRUNCH, LUNCH
             const foodCategories = ["ALL DAY", "BRUNCH", "LUNCH"];
-            
-            // 4 loại sau là nước: HOT DRINKS, COLD DRINKS, JUICES & SMOOTHIES, BEER / WINE / COCKTAILS
             const drinkCategories = ["HOT DRINKS", "COLD DRINKS", "JUICES & SMOOTHIES", "BEER / WINE / COCKTAILS"];
 
             const foodList = formattedData.filter(item => 
@@ -117,7 +124,6 @@ export default function Home() {
             Fresh & Pure
           </p>
           
-          {/* Nút Book Now hoạt động giống hệt trên Header */}
           <button
             onClick={handleBookNow}
             className="bg-accent text-white text-xs font-bold px-8 py-4 uppercase hover:bg-gray-800 transition-all shadow-md"
@@ -142,7 +148,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. 5 RECIPES GRID SECTION (3 Món ăn + 2 Món nước Random) */}
+      {/* 3. 5 RECIPES GRID SECTION */}
       <section className="pb-16 px-5">
         <div className="max-w-[90%] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 transition-all duration-700 ease-in-out">
@@ -182,7 +188,6 @@ export default function Home() {
             )}
           </div>
 
-          {/* Dòng link Discover Full Menu (đã đổi kiểu dáng giống Explore our space) */}
           <div className="mt-12 text-center">
             <Link
               href="/menu"
@@ -211,14 +216,12 @@ export default function Home() {
               "Join us in our hidden garden to enjoy wholesome meals, expertly brewed coffee from Supreme Coffee Roaster, and peaceful moments in the heart of the city."
             </p>
 
-            {/* Dòng link dẫn sang trang Experience đơn giản, tinh tế */}
             <Link
               href="/experience"
               className="inline-block text-xs font-bold uppercase tracking-[2px] text-primary hover:text-accent border-b border-primary hover:border-accent pb-1 transition-colors"
             >
               Explore our space
             </Link>
-
           </div>
         </div>
       </section>
